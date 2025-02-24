@@ -29,14 +29,21 @@ Sensor Launch是用於自動駕駛系統的感測器整合啟動工具，支援U
    sudo apt install ros-humble-velodyne ros-humble-usb-cam ros-humble-autoware-auto-msgs
    ```
 
-3. 編譯Sensor Launch套件：
+3. 從GitHub下載Sensor Launch套件：
+
+   ```bash
+   git clone https://github.com/iumida/ACE428-Prius-Sensor-ROS2.git
+   cd ACE428-Prius-Sensor-ROS2
+   ```
+
+4. 編譯Sensor Launch套件：
 
    ```bash
    colcon build --symlink-install
    source install/setup.bash
    ```
 
-4. IMU手動安裝（Xsens MTi）：
+5. IMU手動安裝（Xsens MTi）：
 
    ```bash
    git clone https://github.com/xsenssupport/Xsens_MTi_ROS_Driver_and_Ntrip_Client.git -b ros2
