@@ -1,0 +1,25 @@
+[0.479s] Invoking command in '/home/prius428/sensorlaunch/build/sensorlaunch': PYTHONPATH=/home/prius428/sensorlaunch/build/sensorlaunch/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prius428/sensorlaunch/install/sensorlaunch/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/prius428/sensorlaunch/build/sensorlaunch/build --no-deps symlink_data
+[0.654s] running develop
+[0.654s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[0.654s]   warnings.warn(
+[0.761s] running egg_info
+[0.761s] creating sensorlaunch.egg-info
+[0.761s] writing sensorlaunch.egg-info/PKG-INFO
+[0.761s] writing dependency_links to sensorlaunch.egg-info/dependency_links.txt
+[0.762s] writing entry points to sensorlaunch.egg-info/entry_points.txt
+[0.762s] writing requirements to sensorlaunch.egg-info/requires.txt
+[0.762s] writing top-level names to sensorlaunch.egg-info/top_level.txt
+[0.762s] writing manifest file 'sensorlaunch.egg-info/SOURCES.txt'
+[0.762s] reading manifest file 'sensorlaunch.egg-info/SOURCES.txt'
+[0.763s] writing manifest file 'sensorlaunch.egg-info/SOURCES.txt'
+[0.786s] running build_ext
+[0.786s] Creating /home/prius428/sensorlaunch/install/sensorlaunch/lib/python3.10/site-packages/sensorlaunch.egg-link (link to .)
+[0.786s] 
+[0.786s] Installed /home/prius428/sensorlaunch/build/sensorlaunch
+[0.786s] running symlink_data
+[0.786s] creating /home/prius428/sensorlaunch/install/sensorlaunch/share/ament_index
+[0.786s] creating /home/prius428/sensorlaunch/install/sensorlaunch/share/ament_index/resource_index
+[0.786s] creating /home/prius428/sensorlaunch/install/sensorlaunch/share/ament_index/resource_index/packages
+[0.786s] symbolically linking /home/prius428/sensorlaunch/build/sensorlaunch/resource/sensorlaunch -> /home/prius428/sensorlaunch/install/sensorlaunch/share/ament_index/resource_index/packages
+[0.786s] symbolically linking /home/prius428/sensorlaunch/build/sensorlaunch/package.xml -> /home/prius428/sensorlaunch/install/sensorlaunch/share/sensorlaunch
+[0.800s] Invoked command in '/home/prius428/sensorlaunch/build/sensorlaunch' returned '0': PYTHONPATH=/home/prius428/sensorlaunch/build/sensorlaunch/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prius428/sensorlaunch/install/sensorlaunch/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/prius428/sensorlaunch/build/sensorlaunch/build --no-deps symlink_data

@@ -1,0 +1,20 @@
+[0.532s] Invoking command in '/home/prius428/sensorlaunch/build/sensorlaunch': PYTHONPATH=/home/prius428/sensorlaunch/build/sensorlaunch/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prius428/sensorlaunch/install/sensorlaunch/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/prius428/sensorlaunch/build/sensorlaunch/build --no-deps symlink_data
+[0.716s] running develop
+[0.716s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[0.716s]   warnings.warn(
+[0.819s] running egg_info
+[0.819s] writing sensorlaunch.egg-info/PKG-INFO
+[0.819s] writing dependency_links to sensorlaunch.egg-info/dependency_links.txt
+[0.819s] writing entry points to sensorlaunch.egg-info/entry_points.txt
+[0.819s] writing requirements to sensorlaunch.egg-info/requires.txt
+[0.819s] writing top-level names to sensorlaunch.egg-info/top_level.txt
+[0.820s] reading manifest file 'sensorlaunch.egg-info/SOURCES.txt'
+[0.821s] writing manifest file 'sensorlaunch.egg-info/SOURCES.txt'
+[0.843s] running build_ext
+[0.843s] Creating /home/prius428/sensorlaunch/install/sensorlaunch/lib/python3.10/site-packages/sensorlaunch.egg-link (link to .)
+[0.844s] Installing can_publisher_node script to /home/prius428/sensorlaunch/install/sensorlaunch/lib/sensorlaunch
+[0.844s] 
+[0.844s] Installed /home/prius428/sensorlaunch/build/sensorlaunch
+[0.844s] running symlink_data
+[0.844s] error: can't copy '/home/prius428/sensorlaunch/build/sensorlaunch/config/usb_cam_params.yaml': doesn't exist or not a regular file
+[0.857s] Invoked command in '/home/prius428/sensorlaunch/build/sensorlaunch' returned '1': PYTHONPATH=/home/prius428/sensorlaunch/build/sensorlaunch/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prius428/sensorlaunch/install/sensorlaunch/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/prius428/sensorlaunch/build/sensorlaunch/build --no-deps symlink_data

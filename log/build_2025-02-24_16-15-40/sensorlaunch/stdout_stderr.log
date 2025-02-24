@@ -1,0 +1,23 @@
+running develop
+/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running egg_info
+creating sensorlaunch.egg-info
+writing sensorlaunch.egg-info/PKG-INFO
+writing dependency_links to sensorlaunch.egg-info/dependency_links.txt
+writing entry points to sensorlaunch.egg-info/entry_points.txt
+writing requirements to sensorlaunch.egg-info/requires.txt
+writing top-level names to sensorlaunch.egg-info/top_level.txt
+writing manifest file 'sensorlaunch.egg-info/SOURCES.txt'
+reading manifest file 'sensorlaunch.egg-info/SOURCES.txt'
+writing manifest file 'sensorlaunch.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/prius428/sensorlaunch/install/sensorlaunch/lib/python3.10/site-packages/sensorlaunch.egg-link (link to .)
+
+Installed /home/prius428/sensorlaunch/build/sensorlaunch
+running symlink_data
+creating /home/prius428/sensorlaunch/install/sensorlaunch/share/ament_index
+creating /home/prius428/sensorlaunch/install/sensorlaunch/share/ament_index/resource_index
+creating /home/prius428/sensorlaunch/install/sensorlaunch/share/ament_index/resource_index/packages
+symbolically linking /home/prius428/sensorlaunch/build/sensorlaunch/resource/sensorlaunch -> /home/prius428/sensorlaunch/install/sensorlaunch/share/ament_index/resource_index/packages
+symbolically linking /home/prius428/sensorlaunch/build/sensorlaunch/package.xml -> /home/prius428/sensorlaunch/install/sensorlaunch/share/sensorlaunch

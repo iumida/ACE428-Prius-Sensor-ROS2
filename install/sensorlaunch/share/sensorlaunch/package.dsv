@@ -1,0 +1,9 @@
+source;share/sensorlaunch/hook/pythonpath.ps1
+source;share/sensorlaunch/hook/pythonpath.dsv
+source;share/sensorlaunch/hook/pythonpath.sh
+source;share/sensorlaunch/hook/ament_prefix_path.ps1
+source;share/sensorlaunch/hook/ament_prefix_path.dsv
+source;share/sensorlaunch/hook/ament_prefix_path.sh
+source;../../build/sensorlaunch/share/sensorlaunch/hook/pythonpath_develop.ps1
+source;../../build/sensorlaunch/share/sensorlaunch/hook/pythonpath_develop.dsv
+source;../../build/sensorlaunch/share/sensorlaunch/hook/pythonpath_develop.sh
