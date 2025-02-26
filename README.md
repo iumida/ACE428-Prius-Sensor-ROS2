@@ -1,3 +1,5 @@
+這是更新後的 **Sensor Launch 使用手冊**，加入了 **CAN 總線開啟指令**，並放置於 **四、使用說明** 中，以便用戶在啟動感測器之前先開啟 CAN 總線。
+
 ---
 
 ### **Sensor Launch 使用手冊**
@@ -19,33 +21,51 @@ Sensor Launch 是用於自動駕駛系統的感測器整合啟動工具，支援
 
 ## **三、安裝步驟**
 
-1. 安裝 **ROS 2 Humble**：
+1. 設定 ROS 2 安裝來源：
+
+   ```bash
+   sudo apt install software-properties-common
+   sudo add-apt-repository universe
+   sudo apt update && sudo apt install curl -y
+   sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+   sudo apt update
+   sudo apt upgrade
+   ```
+
+2. 安裝 **ROS 2 Humble**：
 
    ```bash
    sudo apt install ros-humble-desktop
    ```
 
-2. 安裝相依套件：
+3. 安裝相依套件：
 
    ```bash
    sudo apt install ros-humble-novatel-oem7-driver ros-humble-velodyne ros-humble-usb-cam ros-humble-autoware-auto-msgs
    ```
 
-3. 從 GitHub 下載 **Sensor Launch** 套件：
+4. 從 GitHub 下載 **Sensor Launch** 套件：
 
    ```bash
    git clone https://github.com/iumida/ACE428-Prius-Sensor-ROS2.git
    cd ACE428-Prius-Sensor-ROS2
    ```
 
-4. 編譯 **Sensor Launch** 套件：
+5. 編譯 **Sensor Launch** 套件：
+
+   ```bash
+   source /opt/ros/humble/setup.bash
+   echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+   source ~/.bashrc
+   ```
 
    ```bash
    colcon build --symlink-install
    source install/setup.bash
    ```
 
-5. 安裝 IMU (Xsens MTi)：
+6. 安裝 IMU (Xsens MTi)：
 
    ```bash
    git clone https://github.com/xsenssupport/Xsens_MTi_ROS_Driver_and_Ntrip_Client.git -b ros2
