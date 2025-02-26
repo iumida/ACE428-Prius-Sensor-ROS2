@@ -6,14 +6,17 @@ Sensor Launch 是用於自動駕駛系統的感測器整合啟動工具，支援
 
 ## **二、安裝需求**
 
-- **ROS 2 Humble**
+### **系統版本要求**
 - **Ubuntu 22.04**
-- **USB Camera**
-- **IMU** (例如：Xsens MTi)
-- **Velodyne LiDAR**
-- **CAN 總線接口**
-- **GNSS 接收器**（例如：Novatel）
-- **Autoware Vehicle Msgs**
+- **ROS 2 Humble**
+
+### **限定硬體**
+
+- **1920x1280 USB oTo CAM X6**（USB 連線）
+- **IMU: XSENS MTI 630R**（USB 連線）
+- **NovAtel FlexPak6 GPS**（USB 連線）
+- **CAN 總線**（USB 連線）
+- **VLP16 LiDAR**（網路連線）
 
 ## **三、安裝步驟**
 
@@ -72,6 +75,14 @@ Sensor Launch 是用於自動駕駛系統的感測器整合啟動工具，支援
 
 ## **四、使用說明**
 
+### **ROS 2 指令介紹**
+
+- `ros2 topic echo <topic_name>`：顯示指定話題的即時數據。
+- `ros2 topic hz <topic_name>`：監測話題的發送頻率。
+- `ros2 topic list`：列出所有可用的話題。
+- `ros2 bag info <bag_file>`：顯示 ROS 2 Bag 檔案的資訊。
+- `ros2 bag play <bag_file>`：播放 ROS 2 Bag 錄製的數據。
+
 ### **1. 開啟 CAN 總線**
 
 在啟動感測器之前，請先開啟 CAN 總線：
@@ -106,39 +117,32 @@ python3 record_ros2_bag.py
 ## **五、感測器話題**
 
 - **USB 相機:**
-
-  - /camera1/image\_raw/compressed
-  - /camera2/image\_raw/compressed
-  - /camera3/image\_raw/compressed
-  - /camera4/image\_raw/compressed
-  - /camera5/image\_raw/compressed
-  - /camera6/image\_raw/compressed
+  - /camera1/image_raw/compressed
+  - /camera2/image_raw/compressed
+  - /camera3/image_raw/compressed
+  - /camera4/image_raw/compressed
+  - /camera5/image_raw/compressed
+  - /camera6/image_raw/compressed
 
 - **IMU:**
-
   - `/imu/data`
   - `/imu/acceleration`
   - `/imu/angular_velocity`
 
 - **LiDAR:**
-
   - `/velodyne_points`
 
 - **CAN 總線:**
-
   - `/steering_can`
   - `/velocity_can`
 
 - **GNSS:**
-
   - `/novatel/oem7/bestpos`
 
 - **濾波 Euler 角:**
-
   - `/filter/euler`
 
 - **Autoware 訊息:**
-
   - `/steering_can`
   - `/velocity_can`
 
