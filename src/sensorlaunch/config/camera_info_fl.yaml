@@ -1,0 +1,20 @@
+image_width: 1920
+image_height: 1280
+camera_name: fl
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [1142.7, 0.0, 963.4, 0.0, 1143.6, 625.1, 0.0, 0.0, 1.0]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.33612649, 0.14516536, -0.00068074, 0.00202123, -0.03664713]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [1142.7, 0.0, 963.4, 0.0, 0.0, 1143.6, 625.1, 0.0, 0.0, 0.0, 1.0, 0.0]

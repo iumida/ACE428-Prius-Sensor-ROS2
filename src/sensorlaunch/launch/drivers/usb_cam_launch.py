@@ -1,44 +1,77 @@
 import launch
-from launch_ros.actions import Node
 import os
+import glob
+from launch_ros.actions import Node
 
 def generate_launch_description():
-    base_video_devices = [0, 2, 4, 6, 8, 10]
+    base_config_path = '/home/prius428/sensorlaunch/src/sensorlaunch/config'
+
+    # 可用的相機設備（僅使用 video0, video2, video4, video6, ...）
+    camera_configs = [
+        {
+            'device': '/dev/v4l/by-path/pci-0000:00:14.0-usb-0:6:1.0-video-index0',
+            'camera_name': 'f',
+            'camera_info_url': f'file://{base_config_path}/camera_info_f.yaml'
+        },
+        {
+            'device': '/dev/v4l/by-path/pci-0000:3e:00.0-usb-0:1.2:1.0-video-index0',
+            'camera_name': 'bl',
+            'camera_info_url': f'file://{base_config_path}/camera_info_bl.yaml'
+        },
+        {
+            'device': '/dev/v4l/by-path/pci-0000:00:14.0-usb-0:7:1.0-video-index0',
+            'camera_name': 'fl',
+            'camera_info_url': f'file://{base_config_path}/camera_info_fl.yaml'
+        },
+        {
+            'device': '/dev/v4l/by-path/pci-0000:3e:00.0-usb-0:2.1:1.0-video-index0',
+            'camera_name': 'b',
+            'camera_info_url': f'file://{base_config_path}/camera_info_b.yaml'
+        },
+        {
+            'device': '/dev/v4l/by-path/pci-0000:00:14.0-usb-0:5:1.0-video-index0',
+            'camera_name': 'br',
+            'camera_info_url': f'file://{base_config_path}/camera_info_br.yaml'
+        },
+        {
+            'device': '/dev/v4l/by-path/pci-0000:00:14.0-usb-0:8:1.0-video-index0',
+            'camera_name': 'fr',
+            'camera_info_url': f'file://{base_config_path}/camera_info_fr.yaml'
+        }
+    ]
+
+    # 解析 /dev/v4l/by-path/... 為 /dev/videoX
+    available_devices = glob.glob('/dev/video*')
+    for cam in camera_configs:
+        resolved_path = os.path.realpath(cam['device'])
+        if resolved_path in available_devices:
+            cam['device'] = resolved_path
+        else:
+            print(f"Skipping unavailable device: {resolved_path}")
+
     usb_cam_nodes = []
-
-    def find_available_device(start):
-        device_num = start
-        while device_num < 50:
-            if os.path.exists(f'/dev/video{device_num}'):
-                return device_num
-            device_num += 2
-        return None
-
-    for i, device_num in enumerate(base_video_devices):
-        actual_device = find_available_device(device_num)
-        if actual_device is None:
-            print(f"No available device found starting from /dev/video{device_num}")
-            continue
-
+    for cam in camera_configs:
+        namespace = f'camera_{cam["camera_name"]}'
         usb_cam_nodes.append(
             Node(
                 package='usb_cam',
                 executable='usb_cam_node_exe',
-                namespace=f'camera{i+1}',
-                name=f'usb_cam_node_{i+1}',
+                namespace=namespace,
+                name=f'usb_cam_node_{cam["camera_name"]}',
                 parameters=[{
-                    'video_device': f'/dev/video{actual_device}',
+                    'video_device': cam['device'],
                     'framerate': 10.0,
                     'io_method': 'mmap',
-                    'frame_id': f'camera{i+1}',
+                    'frame_id': namespace,
                     'pixel_format': 'uyvy2rgb',
                     'image_width': 1920,
                     'image_height': 1280,
-                    'camera_name': f'cam{i+1}',
+                    'camera_name': cam['camera_name'],
+                    'camera_info_url': cam['camera_info_url']
                 }],
                 remappings=[
-                    ('image_raw', f'/camera{i+1}/image_raw'),
-                    ('camera_info', f'/camera{i+1}/camera_info')
+                    ('image_raw', f'/{namespace}/image_raw'),
+                    ('camera_info', f'/{namespace}/camera_info')
                 ],
                 output='screen'
             )
